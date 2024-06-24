@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Flexbox align 0 — starting code</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 70%;
+        max-width: 960px;
+        margin: 20px auto;
+      }
+
+      button {
+        font-size: 18px;
+        line-height: 1.5;
+        width: 15%;
+      }
+
+      div {
+        height: 100px;
+        border: 1px solid black;
+      }
+
+      /* Add your flexbox CSS below here */
+
+      div {
+        /* First we tell the div that our elements should be displayed using Flex. */
+        display: flex;
+        /* Now we tell the elements that they should be aligned centerally around the cross axis. */
+        align-items: center;
+        /* Lastly, we tell the elements that they should be spaced around the main axis evenly. */
+        justify-content: space-around;
+      }
+      
+      button:first-child {
+        /* By selecting one of the elements and using 'align-self,
+        we can override the position on where it aligns along the cross-axis*/
+        align-self: flex-end;
+        /* We can use the 'order' attribute in order to manipulate the order of
+        the elements without needing to change their layout in the HTML. Default is 0,
+        since this is 1, it goes 0 0 0 1 meaning the first child 'smile' is at the end.*/
+        order: 1;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <button>Smile</button>
+      <button>Laugh</button>
+      <button>Wink</button>
+      <button>Shrug</button>
+      <button>Blush</button>
+    </div>
+  </body>
+</html>
